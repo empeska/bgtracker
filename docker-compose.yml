@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  app:
+    build: ./
+    volumes:
+      - ./public:/var/www/html
+      - ./app:/var/www/app
+      - ./config:/var/www/config
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: boardgames
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
