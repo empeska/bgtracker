@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matches</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Matches</h1>
+    <a href="/" class="bg-gray-500 text-white px-4 py-2 rounded mb-4 inline-block">Back to Home</a>
+    <a href="/matches/create" class="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block">Record Match</a>
+    <table class="w-full bg-white shadow-md rounded">
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="p-2">Game</th>
+                <th class="p-2">Mode</th>
+                <th class="p-2">Date</th>
+                <th class="p-2">Players</th>
+                <th class="p-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($matches as $match): ?>
+                <tr>
+                    <td class="p-2"><?php echo htmlspecialchars($match['gameName']); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match['gameMode']); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match['date']); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match['players']); ?></td>
+                    <td class="p-2">
+                        <form method="POST" action="/matches/delete" onsubmit="return confirm('Are you sure you want to delete this match?');">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="id" value="<?php echo $match['ID']; ?>">
+                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</body>
+</html>

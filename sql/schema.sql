@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `Player` (
   PRIMARY KEY (`ID`)
 );
 
-CREATE TABLE IF NOT EXISTS `Match` (
+CREATE TABLE IF NOT EXISTS `GameMatch` (
   `ID` INTEGER AUTO_INCREMENT,
   `gameID` INTEGER,
   `gameMode` ENUM('Coop', 'PVP'),
@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS `Match_Players` (
   PRIMARY KEY (`matchID`, `playerID`)
 );
 
-ALTER TABLE `Match_Players` ADD FOREIGN KEY (`matchID`) REFERENCES `Match` (`ID`);
+ALTER TABLE `Match_Players` ADD FOREIGN KEY (`matchID`) REFERENCES `GameMatch` (`ID`) ON DELETE CASCADE;
 
-ALTER TABLE `Match_Players` ADD FOREIGN KEY (`playerID`) REFERENCES `Player` (`ID`);
+ALTER TABLE `Match_Players` ADD FOREIGN KEY (`playerID`) REFERENCES `Player` (`ID`) ON DELETE CASCADE;
 
-ALTER TABLE `Match` ADD FOREIGN KEY (`gameID`) REFERENCES `Game` (`ID`);
+ALTER TABLE `GameMatch` ADD FOREIGN KEY (`gameID`) REFERENCES `Game` (`ID`) ON DELETE CASCADE;
