@@ -1,3 +1,10 @@
+<?php
+/**
+ * @file
+ * @ingroup Game
+ * Widok wyświetlania statystyk związanych z grą.
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>

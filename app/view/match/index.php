@@ -1,3 +1,10 @@
+<?php
+/**
+ * @file
+ * @ingroup Match
+ * Widok wyświetlający przebyte rozgrywki.
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>

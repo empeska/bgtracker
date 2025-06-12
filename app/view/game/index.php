@@ -1,3 +1,10 @@
+<?php
+/**
+ * @file
+ * @ingroup Games
+ * Widok wyświetlania biblioteki gier
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>

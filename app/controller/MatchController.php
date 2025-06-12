@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Controller
+ * Klasa MatchController zarządza zapisanymi rozgrywkami.
+ */
 require_once '../app/model/GameMatchRepo.php';
 require_once '../app/model/GameRepo.php';
 require_once '../app/model/PlayerRepo.php';

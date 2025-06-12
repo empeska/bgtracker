@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Model
+ * Klasa Player reprezentuje gracza.
+ */
 class Player {
    private $id;
    private $firstName;

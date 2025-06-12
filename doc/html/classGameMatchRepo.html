@@ -116,8 +116,10 @@ Metody publiczne</h2></td></tr>
 <tr class="separator:a299e98ba3376accdd23a34edd011df5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a08203fae066d2ea695fdc9ce1f2a9" id="r_a09a08203fae066d2ea695fdc9ce1f2a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09a08203fae066d2ea695fdc9ce1f2a9">getAll</a> ()</td></tr>
 <tr class="separator:a09a08203fae066d2ea695fdc9ce1f2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b2808cf8ae40bf7776292cfc567dedb" id="r_a4b2808cf8ae40bf7776292cfc567dedb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b2808cf8ae40bf7776292cfc567dedb">create</a> ($gameID, $gameMode, $date, $duration, $notes)</td></tr>
-<tr class="separator:a4b2808cf8ae40bf7776292cfc567dedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46940a90a6db1d65e80ada01a886c992" id="r_a46940a90a6db1d65e80ada01a886c992"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46940a90a6db1d65e80ada01a886c992">getMatchPlayers</a> ()</td></tr>
+<tr class="separator:a46940a90a6db1d65e80ada01a886c992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c586b8cc6754e0e6eaf2050fc96efea" id="r_a3c586b8cc6754e0e6eaf2050fc96efea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c586b8cc6754e0e6eaf2050fc96efea">create</a> ($gameID, $gameMode, $date, $duration, $notes, $players)</td></tr>
+<tr class="separator:a3c586b8cc6754e0e6eaf2050fc96efea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68ab10a9aa36d60e9e28655674b2b42c" id="r_a68ab10a9aa36d60e9e28655674b2b42c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68ab10a9aa36d60e9e28655674b2b42c">delete</a> ($id)</td></tr>
 <tr class="separator:a68ab10a9aa36d60e9e28655674b2b42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab9bd518dd8bfe1e585190d339ed514" id="r_a9ab9bd518dd8bfe1e585190d339ed514"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ab9bd518dd8bfe1e585190d339ed514">addPlayerToMatch</a> ($matchID, $playerID, $points)</td></tr>
@@ -168,8 +170,8 @@ Metody publiczne</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b2808cf8ae40bf7776292cfc567dedb" name="a4b2808cf8ae40bf7776292cfc567dedb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b2808cf8ae40bf7776292cfc567dedb">&#9670;&#160;</a></span>create()</h2>
+<a id="a3c586b8cc6754e0e6eaf2050fc96efea" name="a3c586b8cc6754e0e6eaf2050fc96efea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c586b8cc6754e0e6eaf2050fc96efea">&#9670;&#160;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +199,12 @@ Metody publiczne</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$notes</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$notes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$players</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -229,6 +236,23 @@ Metody publiczne</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">GameMatchRepo::getAll </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46940a90a6db1d65e80ada01a886c992" name="a46940a90a6db1d65e80ada01a886c992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46940a90a6db1d65e80ada01a886c992">&#9670;&#160;</a></span>getMatchPlayers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatchRepo::getMatchPlayers </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>

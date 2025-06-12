@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Model
+ * Klasa Game reprezentuje grę w bibliotece.
+ */
 class Game {
    private $id;
    private $name;

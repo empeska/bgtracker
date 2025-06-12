@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Model
+ * Klasa GameMatchRepo wykorzystywana jest do zarządzania danymi w bazie danych związanych z rozgrywkami.
+ */
 require_once __DIR__ . '/GameMatch.php';
 
 class GameMatchRepo {

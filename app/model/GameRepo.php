@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Model
+ * Klasa GameRepo wykorzystywana jest do zarządzania danymi w bazie danych związanych z grami.
+ */
 require_once __DIR__ . '/Game.php';
 
 class GameRepo {

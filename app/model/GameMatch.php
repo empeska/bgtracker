@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Model
+ * Klasa GameMatch reprezentuje pojedyńczą rozgrywkę gry.
+ */
 class GameMatch {
    private $id;
    private $gameID;

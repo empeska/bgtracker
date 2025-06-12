@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Controller
+ * Klasa GameController zarządza modelami związanymi z grami i biblioteką.
+ */
 require_once '../app/model/GameRepo.php';
 
 class GameController {

@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "$_acdegimprstuś",
+  0: "$_acdegimprstuvś",
   1: "gmp",
-  2: "cdgimpr",
+  2: "cdgimprs",
   3: "_acdgis",
   4: "$et",
-  5: "adgpś"
+  5: "cgmpv",
+  6: "adgpś"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "pages"
+  5: "groups",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Pliki",
   3: "Funkcje",
   4: "Zmienne",
-  5: "Strony"
+  5: "Grupay",
+  6: "Strony"
 };
 

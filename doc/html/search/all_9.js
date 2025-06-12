@@ -6,5 +6,6 @@ var searchData=
   ['playercontroller_3',['PlayerController',['../classPlayerController.html',1,'']]],
   ['playercontroller_2ephp_4',['PlayerController.php',['../PlayerController_8php.html',1,'']]],
   ['playerrepo_5',['PlayerRepo',['../classPlayerRepo.html',1,'']]],
-  ['playerrepo_2ephp_6',['PlayerRepo.php',['../PlayerRepo_8php.html',1,'']]]
+  ['playerrepo_2ephp_6',['PlayerRepo.php',['../PlayerRepo_8php.html',1,'']]],
+  ['players_7',['Players',['../group__Player.html',1,'']]]
 ];

@@ -28,6 +28,7 @@ var NAVTREE =
     [ "Aplikacja do śledzenia gier planszowych", "md_README.html", [
       [ "Uruchomienie", "md_README.html#autotoc_md1", null ]
     ] ],
+    [ "Sekcje", "topics.html", "topics" ],
     [ "Klasy", "annotated.html", [
       [ "Lista klas", "annotated.html", "annotated_dup" ],
       [ "Indeks klas", "classes.html", null ],

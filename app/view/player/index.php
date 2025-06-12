@@ -1,3 +1,10 @@
+<?php
+/**
+ * @file
+ * @ingroup Player
+ * Widok wyświetlania listy graczy.
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>

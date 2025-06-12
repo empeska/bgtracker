@@ -12,10 +12,13 @@ var searchData=
   ['getgamestats_9',['getGameStats',['../classGameRepo.html#a40cc76bc4aeaa9f5d007724f508434cc',1,'GameRepo']]],
   ['getid_10',['getId',['../classGame.html#a1c859644a812309721593fac405843f6',1,'Game\getId()'],['../classGameMatch.html#abf38f27fa5992bba530f327c5f81d9ff',1,'GameMatch\getId()'],['../classPlayer.html#af736e47bbecf6a9cfdc36a99ce331e66',1,'Player\getId()']]],
   ['getlastname_11',['getLastName',['../classPlayer.html#a719c24c282f51ebc03a4d98b3d7a4f06',1,'Player']]],
-  ['getmostplayedgames_12',['getMostPlayedGames',['../classPlayerRepo.html#a2f4930050d315ed8ece18c0cc56cbb9e',1,'PlayerRepo']]],
-  ['getmostwongames_13',['getMostWonGames',['../classPlayerRepo.html#a4a3300897627ef76672a81c99c3597f2',1,'PlayerRepo']]],
-  ['getname_14',['getName',['../classGame.html#a6169a830f16fbebb15ab83531ed8daf6',1,'Game']]],
-  ['getnickname_15',['getNickname',['../classPlayer.html#a3ceb116219d07b1f1a07737a2692d8bc',1,'Player']]],
-  ['getnotes_16',['getNotes',['../classGameMatch.html#ae1d69806396ceb58edffd35be53cb129',1,'GameMatch']]],
-  ['getplayerrankingformatch_17',['getPlayerRankingForMatch',['../classPlayerRepo.html#a7bd5513ce929b26d96fac709f725e910',1,'PlayerRepo']]]
+  ['getmatchplayers_12',['getMatchPlayers',['../classGameMatchRepo.html#a46940a90a6db1d65e80ada01a886c992',1,'GameMatchRepo']]],
+  ['getmostplayedgames_13',['getMostPlayedGames',['../classPlayerRepo.html#a2f4930050d315ed8ece18c0cc56cbb9e',1,'PlayerRepo']]],
+  ['getmostwongames_14',['getMostWonGames',['../classPlayerRepo.html#a4a3300897627ef76672a81c99c3597f2',1,'PlayerRepo']]],
+  ['getname_15',['getName',['../classGame.html#a6169a830f16fbebb15ab83531ed8daf6',1,'Game']]],
+  ['getnamefromid_16',['getNameFromID',['../classGameRepo.html#af3f77644e8db0b1ca6fa112d6bde672d',1,'GameRepo']]],
+  ['getnickname_17',['getNickname',['../classPlayer.html#a3ceb116219d07b1f1a07737a2692d8bc',1,'Player']]],
+  ['getnotes_18',['getNotes',['../classGameMatch.html#ae1d69806396ceb58edffd35be53cb129',1,'GameMatch']]],
+  ['getplayerrankingformatch_19',['getPlayerRankingForMatch',['../classPlayerRepo.html#a7bd5513ce929b26d96fac709f725e910',1,'PlayerRepo']]],
+  ['getplayers_20',['getPlayers',['../classGameMatch.html#a5d18264accaee637b7db9ff416e9d6e2',1,'GameMatch']]]
 ];

@@ -12,5 +12,6 @@ var searchData=
   ['setname_9',['setName',['../classGame.html#a60270dd3902ee3fb660b62e072b50d5c',1,'Game']]],
   ['setnickname_10',['setNickname',['../classPlayer.html#a47fad671a5c5da738c50f7cdfb484c08',1,'Player']]],
   ['setnotes_11',['setNotes',['../classGameMatch.html#a224bef95e8d619273141f07c3d4c5e14',1,'GameMatch']]],
-  ['stats_12',['stats',['../classGameController.html#a700da6ecaf8a79ad7b5ea2a2d3149878',1,'GameController']]]
+  ['stats_12',['stats',['../classGameController.html#a700da6ecaf8a79ad7b5ea2a2d3149878',1,'GameController']]],
+  ['stats_2ephp_13',['stats.php',['../stats_8php.html',1,'']]]
 ];

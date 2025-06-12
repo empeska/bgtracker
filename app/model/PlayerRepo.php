@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Model
+ * Klasa PlayerRepo jest wykorzystywana do zarządzania danymi związanymi z listą graczy w bazie danych.
+ */
 require_once __DIR__ . '/Player.php';
 
 class PlayerRepo {

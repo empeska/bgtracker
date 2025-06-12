@@ -1,3 +1,10 @@
+<?php
+/**
+ * @file
+ * @ingroup Match
+ * Widok dodawający rozgrywkę.
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * @ingroup Controller
+ * Klasa PlayerController zarządza modelami związanymi z zapisanymi graczami
+ */
 require_once '../app/model/PlayerRepo.php';
 
 class PlayerController {
