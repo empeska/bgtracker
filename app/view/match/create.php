@@ -3,14 +3,14 @@
 <head>
     <title>Record Match</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script>
-        function addPlayer() {
-            const container = document.getElementById('players-container');
-            const index = container.children.length;
-            const template = document.createElement('div');
-            template.className = 'player-entry flex mb-2';
-            template.innerHTML = `
-                <select name="players[${index}][playerID]" class="w-1/2 p-2 border rounded mr-2" required onchange="updatePlayerOptions()">
+<script>
+function addPlayer() {
+   const container = document.getElementById('players-container');
+   const index = container.children.length;
+   const template = document.createElement('div');
+   template.className = 'player-entry flex mb-2';
+   template.innerHTML = `
+      <select name="players[${index}][playerID]" class="w-1/2 p-2 border rounded mr-2" required onchange="updatePlayerOptions()">
                     <option value="" disabled selected>Select your option</option>
                     <?php foreach ($players as $player): ?>
                         <option value="<?php echo $player->getID(); ?>"><?php echo htmlspecialchars($player->getNickname()); ?></option>
@@ -19,27 +19,44 @@
                 <input type="number" name="players[${index}][points]" class="w-1/2 p-2 border rounded" placeholder="Points" required>
                 <button type="button" onclick="this.parentElement.remove(); updatePlayerOptions();" class="bg-red-500 text-white px-2 py-1 rounded ml-2">Remove</button>
             `;
-            container.appendChild(template);
-            updatePlayerOptions();
-        }
+   container.appendChild(template);
+   updatePlayerOptions();
+}
 
-        function updatePlayerOptions() {
-            const container = document.getElementById('players-container');
-            const selects = container.querySelectorAll('select');
-            const selectedValues = Array.from(selects).map(s => s.value).filter(v => v);
-            selects.forEach((select, index) => {
-                const currentValue = select.value;
-                select.innerHTML = '<?php foreach ($players as $player): ?><option value="<?php echo $player->getID(); ?>"><?php echo htmlspecialchars($player->getNickname()); ?></option><?php endforeach; ?>';
-                select.value = currentValue || '';
-                Array.from(select.options).forEach(option => {
-                    if (option.value && selectedValues.includes(option.value) && option.value !== currentValue) {
-                        option.disabled = true;
-                    } else {
-                        option.disabled = false;
-                    }
-                });
-            });
-        }
+function updatePlayerOptions() {
+   const container = document.getElementById('players-container');
+   const selects = container.querySelectorAll('select');
+   const selectedValues = Array.from(selects).map(s => s.value).filter(v => v);
+   selects.forEach((select, index) => {
+   const currentValue = select.value;
+   select.innerHTML = '<?php foreach ($players as $player): ?><option value="<?php echo $player->getID(); ?>"><?php echo htmlspecialchars($player->getNickname()); ?></option><?php endforeach; ?>';
+   select.value = currentValue || '';
+   Array.from(select.options).forEach(option => {
+   if (option.value && selectedValues.includes(option.value) && option.value !== currentValue) {
+      option.disabled = true;
+   } else {
+      option.disabled = false;
+   }
+   });
+   });
+}
+function defaultDate() {
+   const convertToDateTimeLocalString = (date) => {
+      const year = date.getFullYear();
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const day = date.getDate().toString().padStart(2, "0");
+      const hours = date.getHours().toString().padStart(2, "0");
+      const minutes = date.getMinutes().toString().padStart(2, "0");
+
+      return `${year}-${month}-${day}T${hours}:${minutes}`;
+   }
+   const container = document.getElementById('datepicker');
+   const today = new Date();
+   container.value = convertToDateTimeLocalString(today);
+}
+document.addEventListener('DOMContentLoaded', function() {
+   defaultDate();
+}, false);
     </script>
 </head>
 
@@ -71,7 +88,7 @@
             <!-- date and time selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Date</label>
-                <input type="datetime-local" name="date" class="w-full p-2 border rounded" required>
+                <input id="datepicker" type="datetime-local" name="date" class="w-full p-2 border rounded" required>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Duration (HH:MM:SS)</label>
