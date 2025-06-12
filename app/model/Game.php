@@ -1,23 +1,24 @@
 <?php
 class Game {
-    private $db;
+   private $id;
+   private $name;
+   private $description;
+   private $defaultMode;
 
-    public function __construct($db) {
-        $this->db = $db;
-    }
+   public function __construct($id = null, $name = '', $description = '', $defaultMode = '') {
+      $this->id = $id;
+      $this->name = $name;
+      $this->description = $description;
+      $this->defaultMode = $defaultMode;
+   }
 
-    public function getAll() {
-        $stmt = $this->db->query("SELECT * FROM Game");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+   // Getters and setters
+   public function getId() { return $this->id; }
+   public function getName() { return $this->name; }
+   public function getDescription() { return $this->description; }
+   public function getDefaultMode() { return $this->defaultMode; }
 
-    public function create($name, $description, $defaultMode) {
-        $stmt = $this->db->prepare("INSERT INTO Game (name, description, defaultMode) VALUES (?, ?, ?)");
-        return $stmt->execute([$name, $description, $defaultMode]);
-    }
-
-    public function delete($id) {
-        $stmt = $this->db->prepare("DELETE FROM Game WHERE ID = ?");
-        return $stmt->execute([$id]);
-    }
+   public function setDescription($description) { $this->description = $description; }
+   public function setName($name) { $this->name = $name; }
+   public function setDefaultMode($defaultMode) { $this->defaultMode = $defaultMode; }
 }

@@ -1,48 +1,36 @@
 <?php
 class GameMatch {
-    private $db;
+   private $id;
+   private $gameID;
+   private $gameMode;
+   private $date;
+   private $duration;
+   private $notes;
 
-    public function __construct($db) {
-        $this->db = $db;
-    }
+   public function __construct($id = null, $gameID = null, $gameName = null, $gameMode = '', $date = null, $duration = null, $notes = '', $players = []) {
+      $this->id = $id;
+      $this->gameID = $gameID;
+      $this->gameMode = $gameName;
+      $this->gameMode = $gameMode;
+      $this->date = $date;
+      $this->duration = $duration;
+      $this->notes = $notes;
+      $this->players = $players
+   }
 
-    public function getAll() {
-        $stmt = $this->db->query("SELECT m.*, g.name AS gameName, GROUP_CONCAT(p.nickname) AS players
-            FROM `GameMatch` m
-            JOIN `Game` g ON m.gameID = g.ID
-            JOIN `Match_Players` mp ON m.ID = mp.matchID
-            JOIN `Player` p ON mp.playerID = p.ID
-            GROUP BY m.ID");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+   public function getId() { return $this->id; }
+   public function getGameID() { return $this->gameID; }
+   public function getGameName() { return $this->gameMode; }
+   public function getGameMode() { return $this->gameMode; }
+   public function getDate() { return $this->date; }
+   public function getDuration() { return $this->duration; }
+   public function getNotes() { return $this->notes; }
+   // TODO : Add getters for players
 
-    public function create($gameID, $gameMode, $date, $duration, $notes, $players) {
-        $this->db->beginTransaction();
-        try {
-            $playerIDs = array_column($players, 'playerID');
-            if (count($playerIDs) !== count(array_unique($playerIDs))) {
-                throw new Exception("Duplicate players selected");
-            }
-
-            $stmt = $this->db->prepare("INSERT INTO `GameMatch` (gameID, gameMode, date, duration, notes) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$gameID, $gameMode, $date, $duration, $notes]);
-            $matchID = $this->db->lastInsertId();
-
-            foreach ($players as $player) {
-                $stmt = $this->db->prepare("INSERT INTO `Match_Players` (matchID, playerID, points) VALUES (?, ?, ?)");
-                $stmt->execute([$matchID, $player['playerID'], $player['points']]);
-            }
-            $this->db->commit();
-            return true;
-        } catch (Exception $e) {
-            $this->db->rollBack();
-            error_log("Match creation failed: " . $e->getMessage());
-            return false;
-        }
-    }
-
-    public function delete($id) {
-        $stmt = $this->db->prepare("DELETE FROM `GameMatch` WHERE ID = ?");
-        return $stmt->execute([$id]);
-    }
+   public function setGameID($gameID) { $this->gameID = $gameID; }
+   public function setGameMode($gameMode) { $this->gameMode = $gameMode; }
+   public function setGameName($gameName) { $this->gameMode = $gameName; }
+   public function setDate($date) { $this->date = $date; }
+   public function setDuration($duration) { $this->duration = $duration; }
+   public function setNotes($notes) { $this->notes = $notes; }
 }

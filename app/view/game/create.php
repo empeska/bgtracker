@@ -7,7 +7,7 @@
 <body class="bg-gray-100 p-6">
     <h1 class="text-2xl font-bold mb-4">Add Game</h1>
     <div class="bg-white p-6 rounded shadow-md">
-        <form method="POST" action="/games/create">
+        <form method="POST" action="/game/create">
             <div class="mb-4">
                 <label class="block text-gray-700">Name</label>
                 <input type="text" name="name" class="w-full p-2 border rounded" required>

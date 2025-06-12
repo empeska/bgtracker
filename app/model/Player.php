@@ -1,23 +1,23 @@
 <?php
 class Player {
-    private $db;
+   private $id;
+   private $firstName;
+   private $lastName;
+   private $nickname;
 
-    public function __construct($db) {
-        $this->db = $db;
-    }
+   public function __construct($id = null, $firstName = '', $lastName = '', $nickname = '') {
+      $this->id = $id;
+      $this->firstName = $firstName;
+      $this->lastName = $lastName;
+      $this->nickname = $nickname;
+   }
 
-    public function getAll() {
-        $stmt = $this->db->query("SELECT * FROM Player");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+   public function getId() { return $this->id; }
+   public function getFirstName() { return $this->firstName; }
+   public function getLastName() { return $this->lastName; }
+   public function getNickname() { return $this->nickname; }
 
-    public function create($firstName, $lastName, $nickname) {
-        $stmt = $this->db->prepare("INSERT INTO Player (firstName, lastName, nickname) VALUES (?, ?, ?)");
-        return $stmt->execute([$firstName, $lastName, $nickname]);
-    }
-
-    public function delete($id) {
-        $stmt = $this->db->prepare("DELETE FROM Player WHERE ID = ?");
-        return $stmt->execute([$id]);
-    }
+   public function setFirstName($firstName) { $this->firstName = $firstName; }
+   public function setLastName($lastName) { $this->lastName = $lastName; }
+   public function setNickname($nickname) { $this->nickname = $nickname; }
 }

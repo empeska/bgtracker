@@ -13,7 +13,7 @@
                 <select name="players[${index}][playerID]" class="w-1/2 p-2 border rounded mr-2" required onchange="updatePlayerOptions()">
                     <option value="" disabled selected>Select your option</option>
                     <?php foreach ($players as $player): ?>
-                        <option value="<?php echo $player['ID']; ?>"><?php echo htmlspecialchars($player['nickname']); ?></option>
+                        <option value="<?php echo $player->getID(); ?>"><?php echo htmlspecialchars($player->getNickname()); ?></option>
                     <?php endforeach; ?>
                 </select>
                 <input type="number" name="players[${index}][points]" class="w-1/2 p-2 border rounded" placeholder="Points" required>
@@ -29,7 +29,7 @@
             const selectedValues = Array.from(selects).map(s => s.value).filter(v => v);
             selects.forEach((select, index) => {
                 const currentValue = select.value;
-                select.innerHTML = '<?php foreach ($players as $player): ?><option value="<?php echo $player['ID']; ?>"><?php echo htmlspecialchars($player['nickname']); ?></option><?php endforeach; ?>';
+                select.innerHTML = '<?php foreach ($players as $player): ?><option value="<?php echo $player->getID(); ?>"><?php echo htmlspecialchars($player->getNickname()); ?></option><?php endforeach; ?>';
                 select.value = currentValue || '';
                 Array.from(select.options).forEach(option => {
                     if (option.value && selectedValues.includes(option.value) && option.value !== currentValue) {
@@ -42,21 +42,25 @@
         }
     </script>
 </head>
+
 <body class="bg-gray-100 p-6" onload="updatePlayerOptions()">
     <h1 class="text-2xl font-bold mb-4">Record Match</h1>
     <?php if (isset($error)): ?>
-        <div class="bg-red-100 text-red-700 p-4 mb-4 rounded"><?php echo htmlspecialchars($error); ?></div>
+        <div><?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
+
     <div class="bg-white p-6 rounded shadow-md">
-        <form method="POST" action="/matches/create">
+        <form method="POST" action="/match/create">
+            <-- game selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Game</label>
                 <select name="gameID" class="w-full p-2 border rounded" required>
                     <?php foreach ($games as $game): ?>
-                        <option value="<?php echo $game['ID']; ?>"><?php echo htmlspecialchars($game['name']); ?></option>
+                        <option value="<?php echo $game->getID(); ?>"><?php echo htmlspecialchars($game->getName()); ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
+            <-- game mode selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Game Mode</label>
                 <select name="gameMode" class="w-full p-2 border rounded">
@@ -64,6 +68,7 @@
                     <option value="Coop">Coop</option>
                 </select>
             </div>
+            <-- date and time selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Date</label>
                 <input type="datetime-local" name="date" class="w-full p-2 border rounded" required>
@@ -72,17 +77,19 @@
                 <label class="block text-gray-700">Duration (HH:MM:SS)</label>
                 <input type="time" name="duration" class="w-full p-2 border rounded">
             </div>
+            <-- notes field -->
             <div class="mb-4">
                 <label class="block text-gray-700">Notes</label>
                 <textarea name="notes" class="w-full p-2 border rounded"></textarea>
             </div>
+            <-- players section -->
             <div class="mb-4">
                 <label class="block text-gray-700">Players</label>
                 <div id="players-container">
                     <div class="player-entry flex mb-2">
                         <select name="players[0][playerID]" class="w-1/2 p-2 border rounded mr-2" required onchange="updatePlayerOptions()">
                             <?php foreach ($players as $player): ?>
-                                <option value="<?php echo $player['ID']; ?>"><?php echo htmlspecialchars($player['nickname']); ?></option>
+                                <option value="<?php echo $player->getID(); ?>"><?php echo htmlspecialchars($player->getNickname()); ?></option>
                             <?php endforeach; ?>
                         </select>
                         <input type="number" name="players[0][points]" class="w-1/2 p-2 border rounded" placeholder="Points" required>

@@ -7,7 +7,7 @@
 <body class="bg-gray-100 p-6">
     <h1 class="text-2xl font-bold mb-4">Matches</h1>
     <a href="/" class="bg-gray-500 text-white px-4 py-2 rounded mb-4 inline-block">Back to Home</a>
-    <a href="/matches/create" class="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block">Record Match</a>
+    <a href="/match/create" class="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block">Record Match</a>
     <table class="w-full bg-white shadow-md rounded">
         <thead>
             <tr class="bg-gray-200">
@@ -21,14 +21,14 @@
         <tbody>
             <?php foreach ($matches as $match): ?>
                 <tr>
-                    <td class="p-2"><?php echo htmlspecialchars($match['gameName']); ?></td>
-                    <td class="p-2"><?php echo htmlspecialchars($match['gameMode']); ?></td>
-                    <td class="p-2"><?php echo htmlspecialchars($match['date']); ?></td>
-                    <td class="p-2"><?php echo htmlspecialchars($match['players']); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match->getGameName()); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match->getGameMode()); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match->getDate()); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match->getPlayers()); ?></td>
                     <td class="p-2">
-                        <form method="POST" action="/matches/delete" onsubmit="return confirm('Are you sure you want to delete this match?');">
+                        <form method="POST" action="/match/delete" onsubmit="return confirm('Are you sure you want to delete this match?');">
                             <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="id" value="<?php echo $match['ID']; ?>">
+                            <input type="hidden" name="id" value="<?php echo $match->getID(); ?>">
                             <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
                         </form>
                     </td>
