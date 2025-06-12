@@ -10,6 +10,14 @@
 <head>
     <title>Matches</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   <script>
+   function toggleNotes(button) {
+       const row = button.closest('tr').nextElementSibling;
+       const isVisible = !row.classList.contains('hidden');
+       row.classList.toggle('hidden');
+       button.textContent = isVisible ? 'Show Notes' : 'Hide Notes';
+   }
+   </script>
 </head>
 <body class="bg-gray-100 p-6">
     <h1 class="text-2xl font-bold mb-4">Matches</h1>
@@ -32,12 +40,18 @@
                     <td class="p-2"><?php echo htmlspecialchars($match->getGameMode()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($match->getDate()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($match->getPlayers());?></td>
-                    <td class="p-2">
+                    <td class="p-2 flex justify-center">
                         <form method="POST" action="/match/delete" onsubmit="return confirm('Are you sure you want to delete this match?');">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="id" value="<?php echo $match->getID(); ?>">
                             <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
                         </form>
+                        <button onclick="toggleNotes(this)" class="bg-yellow-500 text-white px-2 py-1 rounded">Show Notes</button>
+                    </td>
+                </tr>
+               <tr class="hidden note-row bg-yellow-100">
+                    <td colspan="5" class="p-4 text-left text-sm text-gray-700 border-t">
+                        <?php echo nl2br(htmlspecialchars($match->getNotes())); ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
