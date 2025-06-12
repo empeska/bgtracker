@@ -1,0 +1,79 @@
+\doxysection{Dokumentacja pliku public/index.php}
+\hypertarget{public_2index_8php}{}\label{public_2index_8php}\index{public/index.php@{public/index.php}}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{public_2index_8php_a1fa3127fc82f96b1436d871ef02be319}{\$db}} = require \textquotesingle{}../config/database.\+php\textquotesingle{}
+\item 
+\mbox{\hyperlink{public_2index_8php_a653b5458163d338546c47271b4fb81b7}{\$uri}} = parse\+\_\+url(\$\+\_\+\+SERVER\mbox{[}\textquotesingle{}REQUEST\+\_\+\+URI\textquotesingle{}\mbox{]}, PHP\+\_\+\+URL\+\_\+\+PATH)
+\item 
+\mbox{\hyperlink{public_2index_8php_a8d7f597e2b6cf2aaef663822d1b96a82}{\$segments}} = array\+\_\+filter(explode(\textquotesingle{}/\textquotesingle{}, trim(\$uri, \textquotesingle{}/\textquotesingle{})))
+\item 
+\mbox{\hyperlink{public_2index_8php_a4845baceacf6ec5e204c54d91caa2f25}{\$controller\+Name}} = !empty(\$segments\mbox{[}0\mbox{]}) ? ucfirst(\$segments\mbox{[}0\mbox{]}) . \textquotesingle{}Controller\textquotesingle{} \+: null
+\item 
+\mbox{\hyperlink{public_2index_8php_a12661b2fc0f57f97e30a1620889ce9c6}{\$method}} = !empty(\$segments\mbox{[}1\mbox{]}) ? \$segments\mbox{[}1\mbox{]} \+: \textquotesingle{}index\textquotesingle{}
+\item 
+\mbox{\hyperlink{public_2index_8php_a8d1228316522ea5fb9ebe4c7b2361acc}{\$controller\+Map}}
+\item 
+if(\$controller\+Name \&\&isset(\$controller\+Map \mbox{\hyperlink{public_2index_8php_ada26c07dceae6120c41618352733547b}{else}} \mbox{[}\$controller\+Name\mbox{]}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{public_2index_8php_a8d1228316522ea5fb9ebe4c7b2361acc}\index{index.php@{index.php}!\$controllerMap@{\$controllerMap}}
+\index{\$controllerMap@{\$controllerMap}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$controllerMap}{\$controllerMap}}
+{\footnotesize\ttfamily \label{public_2index_8php_a8d1228316522ea5fb9ebe4c7b2361acc} 
+\$controller\+Map}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'PlayerController'}\ =>\ \_\_DIR\_\_\ .\ \textcolor{stringliteral}{'/../app/controller/PlayerController.php'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'GameController'}\ =>\ \_\_DIR\_\_\ .\ \textcolor{stringliteral}{'/../app/controller/GameController.php'},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{'MatchController'}\ =>\ \_\_DIR\_\_\ .\ \textcolor{stringliteral}{'/../app/controller/MatchController.php'},}
+\DoxyCodeLine{]}
+
+\end{DoxyCode}
+\Hypertarget{public_2index_8php_a4845baceacf6ec5e204c54d91caa2f25}\index{index.php@{index.php}!\$controllerName@{\$controllerName}}
+\index{\$controllerName@{\$controllerName}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$controllerName}{\$controllerName}}
+{\footnotesize\ttfamily \label{public_2index_8php_a4845baceacf6ec5e204c54d91caa2f25} 
+\$controller\+Name = !empty(\$segments\mbox{[}0\mbox{]}) ? ucfirst(\$segments\mbox{[}0\mbox{]}) . \textquotesingle{}Controller\textquotesingle{} \+: null}
+
+\Hypertarget{public_2index_8php_a1fa3127fc82f96b1436d871ef02be319}\index{index.php@{index.php}!\$db@{\$db}}
+\index{\$db@{\$db}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$db}{\$db}}
+{\footnotesize\ttfamily \label{public_2index_8php_a1fa3127fc82f96b1436d871ef02be319} 
+\$db = require \textquotesingle{}../config/database.\+php\textquotesingle{}}
+
+\Hypertarget{public_2index_8php_a12661b2fc0f57f97e30a1620889ce9c6}\index{index.php@{index.php}!\$method@{\$method}}
+\index{\$method@{\$method}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$method}{\$method}}
+{\footnotesize\ttfamily \label{public_2index_8php_a12661b2fc0f57f97e30a1620889ce9c6} 
+\$method = !empty(\$segments\mbox{[}1\mbox{]}) ? \$segments\mbox{[}1\mbox{]} \+: \textquotesingle{}index\textquotesingle{}}
+
+\Hypertarget{public_2index_8php_a8d7f597e2b6cf2aaef663822d1b96a82}\index{index.php@{index.php}!\$segments@{\$segments}}
+\index{\$segments@{\$segments}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$segments}{\$segments}}
+{\footnotesize\ttfamily \label{public_2index_8php_a8d7f597e2b6cf2aaef663822d1b96a82} 
+\$segments = array\+\_\+filter(explode(\textquotesingle{}/\textquotesingle{}, trim(\$uri, \textquotesingle{}/\textquotesingle{})))}
+
+\Hypertarget{public_2index_8php_a653b5458163d338546c47271b4fb81b7}\index{index.php@{index.php}!\$uri@{\$uri}}
+\index{\$uri@{\$uri}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{\$uri}{\$uri}}
+{\footnotesize\ttfamily \label{public_2index_8php_a653b5458163d338546c47271b4fb81b7} 
+\$uri = parse\+\_\+url(\$\+\_\+\+SERVER\mbox{[}\textquotesingle{}REQUEST\+\_\+\+URI\textquotesingle{}\mbox{]}, PHP\+\_\+\+URL\+\_\+\+PATH)}
+
+\Hypertarget{public_2index_8php_ada26c07dceae6120c41618352733547b}\index{index.php@{index.php}!else@{else}}
+\index{else@{else}!index.php@{index.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \label{public_2index_8php_ada26c07dceae6120c41618352733547b} 
+if ( \$controller\+Name \&\&isset( \$controller\+Map else\mbox{[} \$controller\+Name\mbox{]}))}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ require\ \_\_DIR\_\_\ .\ \textcolor{stringliteral}{'/../app/view/home/index.php'}}
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\doxysection{Dokumentacja pliku config/database.php}
+\hypertarget{database_8php}{}\label{database_8php}\index{config/database.php@{config/database.php}}
+\doxysubsubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8php_a711797613cb863ca0756df789c396bf2}{\$host}} = \textquotesingle{}db\textquotesingle{}
+\item 
+\mbox{\hyperlink{database_8php_a1fa3127fc82f96b1436d871ef02be319}{\$db}} = \textquotesingle{}boardgames\textquotesingle{}
+\item 
+\mbox{\hyperlink{database_8php_a598ca4e71b15a1313ec95f0df1027ca5}{\$user}} = \textquotesingle{}root\textquotesingle{}
+\item 
+\mbox{\hyperlink{database_8php_a12ec2780b52bd1c54d38c2f981c0349f}{\$pass}} = \textquotesingle{}root\textquotesingle{}
+\item 
+\mbox{\hyperlink{database_8php_a6441cca8c9fa11e16d2017e8cb733c10}{\$dsn}} = "{}mysql\+:host=\$host;dbname=\$db;charset=utf8mb4"{}
+\item 
+\mbox{\hyperlink{database_8php_abe4cc9788f52e49485473dc699537388}{try}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\Hypertarget{database_8php_a1fa3127fc82f96b1436d871ef02be319}\index{database.php@{database.php}!\$db@{\$db}}
+\index{\$db@{\$db}!database.php@{database.php}}
+\doxysubsubsection{\texorpdfstring{\$db}{\$db}}
+{\footnotesize\ttfamily \label{database_8php_a1fa3127fc82f96b1436d871ef02be319} 
+\$db = \textquotesingle{}boardgames\textquotesingle{}}
+
+\Hypertarget{database_8php_a6441cca8c9fa11e16d2017e8cb733c10}\index{database.php@{database.php}!\$dsn@{\$dsn}}
+\index{\$dsn@{\$dsn}!database.php@{database.php}}
+\doxysubsubsection{\texorpdfstring{\$dsn}{\$dsn}}
+{\footnotesize\ttfamily \label{database_8php_a6441cca8c9fa11e16d2017e8cb733c10} 
+\$dsn = "{}mysql\+:host=\$host;dbname=\$db;charset=utf8mb4"{}}
+
+\Hypertarget{database_8php_a711797613cb863ca0756df789c396bf2}\index{database.php@{database.php}!\$host@{\$host}}
+\index{\$host@{\$host}!database.php@{database.php}}
+\doxysubsubsection{\texorpdfstring{\$host}{\$host}}
+{\footnotesize\ttfamily \label{database_8php_a711797613cb863ca0756df789c396bf2} 
+\$host = \textquotesingle{}db\textquotesingle{}}
+
+\Hypertarget{database_8php_a12ec2780b52bd1c54d38c2f981c0349f}\index{database.php@{database.php}!\$pass@{\$pass}}
+\index{\$pass@{\$pass}!database.php@{database.php}}
+\doxysubsubsection{\texorpdfstring{\$pass}{\$pass}}
+{\footnotesize\ttfamily \label{database_8php_a12ec2780b52bd1c54d38c2f981c0349f} 
+\$pass = \textquotesingle{}root\textquotesingle{}}
+
+\Hypertarget{database_8php_a598ca4e71b15a1313ec95f0df1027ca5}\index{database.php@{database.php}!\$user@{\$user}}
+\index{\$user@{\$user}!database.php@{database.php}}
+\doxysubsubsection{\texorpdfstring{\$user}{\$user}}
+{\footnotesize\ttfamily \label{database_8php_a598ca4e71b15a1313ec95f0df1027ca5} 
+\$user = \textquotesingle{}root\textquotesingle{}}
+
+\Hypertarget{database_8php_abe4cc9788f52e49485473dc699537388}\index{database.php@{database.php}!try@{try}}
+\index{try@{try}!database.php@{database.php}}
+\doxysubsubsection{\texorpdfstring{try}{try}}
+{\footnotesize\ttfamily \label{database_8php_abe4cc9788f52e49485473dc699537388} 
+try}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ PDO(\mbox{\hyperlink{database_8php_a6441cca8c9fa11e16d2017e8cb733c10}{\$dsn}},\ \mbox{\hyperlink{database_8php_a598ca4e71b15a1313ec95f0df1027ca5}{\$user}},\ \mbox{\hyperlink{database_8php_a12ec2780b52bd1c54d38c2f981c0349f}{\$pass}})}
+
+\end{DoxyCode}

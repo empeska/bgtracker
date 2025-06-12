@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BGTracker: Dokumentacja klasy GameMatch</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BGTracker
+   </div>
+   <div id="projectbrief">Dokumentuj swoje gry i rozgrywki planszowe</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classGameMatch.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="classGameMatch-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy GameMatch</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a73c7dae018115f8f7c615fe1384fded0" id="r_a73c7dae018115f8f7c615fe1384fded0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c7dae018115f8f7c615fe1384fded0">__construct</a> ($id=null, $gameID=null, $gameName=null, $gameMode='', $date=null, $duration=null, $notes='', $players=[])</td></tr>
+<tr class="separator:a73c7dae018115f8f7c615fe1384fded0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf38f27fa5992bba530f327c5f81d9ff" id="r_abf38f27fa5992bba530f327c5f81d9ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf38f27fa5992bba530f327c5f81d9ff">getId</a> ()</td></tr>
+<tr class="separator:abf38f27fa5992bba530f327c5f81d9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9496117ff45d6d9f7ae14113c051a441" id="r_a9496117ff45d6d9f7ae14113c051a441"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9496117ff45d6d9f7ae14113c051a441">getGameID</a> ()</td></tr>
+<tr class="separator:a9496117ff45d6d9f7ae14113c051a441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb73ad7c40d5d0d7b0b42a5705d93754" id="r_acb73ad7c40d5d0d7b0b42a5705d93754"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb73ad7c40d5d0d7b0b42a5705d93754">getGameName</a> ()</td></tr>
+<tr class="separator:acb73ad7c40d5d0d7b0b42a5705d93754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea9749c3417f79e7f7ead57fc908b65" id="r_a7ea9749c3417f79e7f7ead57fc908b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ea9749c3417f79e7f7ead57fc908b65">getGameMode</a> ()</td></tr>
+<tr class="separator:a7ea9749c3417f79e7f7ead57fc908b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2aab4569c7552169d907150536291ed" id="r_ad2aab4569c7552169d907150536291ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2aab4569c7552169d907150536291ed">getDate</a> ()</td></tr>
+<tr class="separator:ad2aab4569c7552169d907150536291ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a578cf45d3280db9dc5963b1ddba0a5fc" id="r_a578cf45d3280db9dc5963b1ddba0a5fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a578cf45d3280db9dc5963b1ddba0a5fc">getDuration</a> ()</td></tr>
+<tr class="separator:a578cf45d3280db9dc5963b1ddba0a5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d69806396ceb58edffd35be53cb129" id="r_ae1d69806396ceb58edffd35be53cb129"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1d69806396ceb58edffd35be53cb129">getNotes</a> ()</td></tr>
+<tr class="separator:ae1d69806396ceb58edffd35be53cb129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef09575e25eff448dbc2ec02def83d7" id="r_a6ef09575e25eff448dbc2ec02def83d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef09575e25eff448dbc2ec02def83d7">setGameID</a> ($gameID)</td></tr>
+<tr class="separator:a6ef09575e25eff448dbc2ec02def83d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380f11345287965bbad7cfb4bfdf2d35" id="r_a380f11345287965bbad7cfb4bfdf2d35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a380f11345287965bbad7cfb4bfdf2d35">setGameMode</a> ($gameMode)</td></tr>
+<tr class="separator:a380f11345287965bbad7cfb4bfdf2d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a33a127d29334b856628244e5b92cc" id="r_a90a33a127d29334b856628244e5b92cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90a33a127d29334b856628244e5b92cc">setGameName</a> ($gameName)</td></tr>
+<tr class="separator:a90a33a127d29334b856628244e5b92cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18aa2bdb147ac45ce845409caa35e51" id="r_ac18aa2bdb147ac45ce845409caa35e51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac18aa2bdb147ac45ce845409caa35e51">setDate</a> ($date)</td></tr>
+<tr class="separator:ac18aa2bdb147ac45ce845409caa35e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c11d97d1fa060f0b9fe00fd5a4c3d18" id="r_a7c11d97d1fa060f0b9fe00fd5a4c3d18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c11d97d1fa060f0b9fe00fd5a4c3d18">setDuration</a> ($duration)</td></tr>
+<tr class="separator:a7c11d97d1fa060f0b9fe00fd5a4c3d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224bef95e8d619273141f07c3d4c5e14" id="r_a224bef95e8d619273141f07c3d4c5e14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a224bef95e8d619273141f07c3d4c5e14">setNotes</a> ($notes)</td></tr>
+<tr class="separator:a224bef95e8d619273141f07c3d4c5e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a73c7dae018115f8f7c615fe1384fded0" name="a73c7dae018115f8f7c615fe1384fded0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c7dae018115f8f7c615fe1384fded0">&#9670;&#160;</a></span>__construct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::__construct </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$gameID</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$gameName</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$gameMode</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$date</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$duration</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$notes</em></span><span class="paramdefsep"> = </span><span class="paramdefval">''</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$players</em></span><span class="paramdefsep"> = </span><span class="paramdefval">[]</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ad2aab4569c7552169d907150536291ed" name="ad2aab4569c7552169d907150536291ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2aab4569c7552169d907150536291ed">&#9670;&#160;</a></span>getDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a578cf45d3280db9dc5963b1ddba0a5fc" name="a578cf45d3280db9dc5963b1ddba0a5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a578cf45d3280db9dc5963b1ddba0a5fc">&#9670;&#160;</a></span>getDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9496117ff45d6d9f7ae14113c051a441" name="a9496117ff45d6d9f7ae14113c051a441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9496117ff45d6d9f7ae14113c051a441">&#9670;&#160;</a></span>getGameID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getGameID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ea9749c3417f79e7f7ead57fc908b65" name="a7ea9749c3417f79e7f7ead57fc908b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea9749c3417f79e7f7ead57fc908b65">&#9670;&#160;</a></span>getGameMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getGameMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb73ad7c40d5d0d7b0b42a5705d93754" name="acb73ad7c40d5d0d7b0b42a5705d93754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb73ad7c40d5d0d7b0b42a5705d93754">&#9670;&#160;</a></span>getGameName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getGameName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf38f27fa5992bba530f327c5f81d9ff" name="abf38f27fa5992bba530f327c5f81d9ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf38f27fa5992bba530f327c5f81d9ff">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1d69806396ceb58edffd35be53cb129" name="ae1d69806396ceb58edffd35be53cb129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d69806396ceb58edffd35be53cb129">&#9670;&#160;</a></span>getNotes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::getNotes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac18aa2bdb147ac45ce845409caa35e51" name="ac18aa2bdb147ac45ce845409caa35e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac18aa2bdb147ac45ce845409caa35e51">&#9670;&#160;</a></span>setDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::setDate </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c11d97d1fa060f0b9fe00fd5a4c3d18" name="a7c11d97d1fa060f0b9fe00fd5a4c3d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c11d97d1fa060f0b9fe00fd5a4c3d18">&#9670;&#160;</a></span>setDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::setDuration </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$duration</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ef09575e25eff448dbc2ec02def83d7" name="a6ef09575e25eff448dbc2ec02def83d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef09575e25eff448dbc2ec02def83d7">&#9670;&#160;</a></span>setGameID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::setGameID </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$gameID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a380f11345287965bbad7cfb4bfdf2d35" name="a380f11345287965bbad7cfb4bfdf2d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380f11345287965bbad7cfb4bfdf2d35">&#9670;&#160;</a></span>setGameMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::setGameMode </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$gameMode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90a33a127d29334b856628244e5b92cc" name="a90a33a127d29334b856628244e5b92cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a33a127d29334b856628244e5b92cc">&#9670;&#160;</a></span>setGameName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::setGameName </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$gameName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a224bef95e8d619273141f07c3d4c5e14" name="a224bef95e8d619273141f07c3d4c5e14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224bef95e8d619273141f07c3d4c5e14">&#9670;&#160;</a></span>setNotes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameMatch::setNotes </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>$notes</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li>app/model/<a class="el" href="GameMatch_8php.html">GameMatch.php</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classGameMatch.html">GameMatch</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
