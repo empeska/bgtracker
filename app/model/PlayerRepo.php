@@ -82,4 +82,32 @@ class PlayerRepo {
       $stmt->execute(['playerID' => $playerID]);
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
+
+   public function getById($id) {
+       $stmt = $this->db->prepare("SELECT * FROM Player WHERE ID = ?");
+       $stmt->execute([$id]);
+       return $stmt->fetch(PDO::FETCH_ASSOC);
+   }
+
+   public function getGlobalWinrate($playerID) {
+       $query = "
+           WITH Matches AS (
+               SELECT mp.matchID,
+                      CASE WHEN mp.points = (
+                        SELECT MAX(points)
+                        FROM Match_Players mp2
+                        WHERE mp2.matchID = mp.matchID
+                      ) THEN 1 ELSE 0 END AS win
+               FROM Match_Players mp
+               JOIN GameMatch gm ON gm.ID = mp.matchID
+               WHERE mp.playerID = :playerID AND gm.gameMode = 'PVP'
+           )
+           SELECT COUNT(*) AS total, SUM(win) AS wins,
+                  ROUND(SUM(win) * 100.0 / NULLIF(COUNT(*), 0), 2) AS winrate
+           FROM Matches;
+       ";
+       $stmt = $this->db->prepare($query);
+       $stmt->execute(['playerID' => $playerID]);
+       return $stmt->fetch(PDO::FETCH_ASSOC);
+   }
 }

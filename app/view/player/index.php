@@ -30,13 +30,14 @@
                     <td class="p-2"><?php echo htmlspecialchars($player->getFirstName()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($player->getLastName()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($player->getNickname()); ?></td>
-                    <td class="p-2 flex content-center justify-center space-x-2">
-                        <form method="POST" action="/player/delete" onsubmit="return confirm('Are you sure you want to delete this player?');">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="id" value="<?php echo $player->getID(); ?>">
-                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
-                        </form>
-                    </td>
+                  <td class="p-2 flex content-center justify-center space-x-2">
+                      <a href="/player/stats?id=<?php echo $player->getID(); ?>" class="bg-green-500 text-white px-2 py-1 rounded">Stats</a>
+                      <form method="POST" action="/player/delete" onsubmit="return confirm('Are you sure you want to delete this player?');">
+                          <input type="hidden" name="_method" value="DELETE">
+                          <input type="hidden" name="id" value="<?php echo $player->getID(); ?>">
+                          <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                      </form>
+                  </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

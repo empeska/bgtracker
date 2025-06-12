@@ -31,14 +31,14 @@
                     <td class="p-2"><?php echo htmlspecialchars($game->getName()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($game->getDefaultMode()); ?></td>
                     <td class="p-2 flex content-center justify-center space-x-2">
+                        <form method="GET" action="/game/stats" class="inline-block">
+                            <input type="hidden" name="id" value="<?php echo $game->getID(); ?>">
+                            <button type="submit" class="bg-green-500 text-white px-2 py-1 rounded">Stats</button>
+                        </form>
                         <form method="POST" action="/game/delete" onsubmit="return confirm('Are you sure you want to delete this game?');">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="id" value="<?php echo $game->getID(); ?>">
                             <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
-                        </form>
-                        <form method="GET" action="/game/stats" class="inline-block">
-                            <input type="hidden" name="id" value="<?php echo $game->getID(); ?>">
-                            <button type="submit" class="bg-green-500 text-white px-2 py-1 rounded">Stats</button>
                         </form>
                     </td>
                 </tr>
