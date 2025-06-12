@@ -4,7 +4,7 @@
     <title>Games</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-6">
+<body class="bg-gray-100 p-6" onload="sortTable(1)">
     <h1 class="text-2xl font-bold mb-4">Games</h1>
 
     <a href="/" class="bg-gray-500 text-white px-4 py-2 rounded mb-4 inline-block">Back to Home</a>

@@ -43,6 +43,7 @@ class GameController {
       if ($gameID) {
          $stats = $this->gameRepo->getGameStats($gameID);
          if ($stats) {
+            $gameName = $this->gameRepo->getNameFromID($gameID);
             require '../app/view/game/stats.php';
          } else {
             echo "No stats found for this game.";

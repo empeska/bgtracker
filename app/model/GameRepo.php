@@ -30,33 +30,71 @@ class GameRepo {
 
    public function getGameStats($gameID) {
       $query = "
-            SELECT 
-                COUNT(DISTINCT gm.ID) as total_matches,
-                GROUP_CONCAT(DISTINCT (
-                    SELECT p.nickname 
-                    FROM Match_Players mp2 
-                    JOIN Player p ON p.ID = mp2.playerID 
-                    WHERE mp2.matchID = gm.ID 
-                    AND mp2.points = (
-                        SELECT MAX(points) 
-                        FROM Match_Players mp3 
-                        WHERE mp3.matchID = gm.ID
-                    )
-                )) as top_players,
-                GROUP_CONCAT(DISTINCT (
-                    SELECT p.nickname 
-                    FROM Match_Players mp4 
-                    JOIN Player p ON p.ID = mp4.playerID 
-                    WHERE mp4.matchID = gm.ID
-                    GROUP BY p.ID 
-                    ORDER BY COUNT(*) DESC 
-                    LIMIT 1
-                )) as most_frequent_players
-            FROM GameMatch gm
-            WHERE gm.gameID = :gameID
-        ";
+      WITH PlayerMatches AS (
+         SELECT 
+              mp.playerID,
+              p.firstName,
+              p.lastName,
+              p.nickname,
+              mp.matchID,
+              mp.points,
+              gm.gameID,
+              ROW_NUMBER() OVER (PARTITION BY mp.matchID ORDER BY mp.points DESC) AS rank_in_match
+          FROM 
+              Match_Players mp
+              JOIN GameMatch gm ON mp.matchID = gm.ID
+              JOIN Player p ON mp.playerID = p.ID
+              JOIN Game g ON gm.gameID = g.ID
+          WHERE 
+              g.ID = :gameID
+      ),
+      PlayerStats AS (
+          SELECT 
+              p.ID AS playerID,
+              p.firstName,
+              p.lastName,
+              p.nickname,
+              COUNT(mp.matchID) AS play_count,
+              SUM(CASE WHEN pm.rank_in_match = 1 THEN 1 ELSE 0 END) AS wins
+          FROM 
+              Player p
+              LEFT JOIN Match_Players mp ON p.ID = mp.playerID
+              LEFT JOIN GameMatch gm ON mp.matchID = gm.ID
+              LEFT JOIN Game g ON gm.gameID = g.ID
+              LEFT JOIN PlayerMatches pm ON p.ID = pm.playerID AND pm.matchID = mp.matchID
+          WHERE 
+              g.ID = :gameID
+          GROUP BY 
+              p.ID, p.firstName, p.lastName, p.nickname
+      )
+      SELECT 
+          firstName,
+          lastName,
+          nickname,
+          play_count,
+          CASE 
+              WHEN play_count > 0 THEN ROUND((wins / play_count * 100), 2)
+              ELSE 0
+          END AS win_rate
+      FROM 
+          PlayerStats;
+      ";
       $stmt = $this->db->prepare($query);
       $stmt->execute(['gameID' => $gameID]);
-      return $stmt->fetch(PDO::FETCH_ASSOC);
+      $stats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $stats;
+   }
+   public function getNameFromID($gameID) {
+      $query = "
+      SELECT
+         g.Name
+      FROM
+         Game g
+      WHERE
+         g.ID = :gameID
+      ";
+      $stmt = $this->db->prepare($query);
+      $stmt->execute(['gameID' => $gameID]);
+      return $stmt->fetch()[0];
    }
 }
