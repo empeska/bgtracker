@@ -24,7 +24,6 @@ class MatchController {
       $players = $this->playerRepo->getAll();
       $error = null;
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-         var_dump($_POST);
          $gameID = $_POST['gameID'] ?? 0;
          $gameMode = $_POST['gameMode'] ?? 'PVP';
          $date = $_POST['date'] ?? date('Y-m-d H:i:s');
@@ -39,7 +38,7 @@ class MatchController {
             header('Location: /match');
             exit;
          } else {
-            $error = "Error creating match: Duplicate players selected.";
+            $error = "Error creating match";
          }
       }
       require '../app/view/match/create.php';
@@ -49,7 +48,7 @@ class MatchController {
       if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
          $id = $_POST['id'] ?? 0;
          if ($this->gameMatchRepo->delete($id)) {
-            header('Location: /matches');
+            header('Location: /match');
             exit;
          } else {
             echo "Error deleting match.";

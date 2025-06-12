@@ -9,29 +9,51 @@ class GameMatchRepo {
    }
 
    public function getAll() {
-      $stmt = $this->db->query("
-            SELECT gm.*, g.name AS gameName
-            FROM GameMatch gm
-            JOIN Game g ON gm.gameID = g.ID
-            ");
+      $stmt = $this->db->query("SELECT m.*, g.name AS gameName, GROUP_CONCAT(p.nickname) AS players
+         FROM `GameMatch` m
+         JOIN `Game` g ON m.gameID = g.ID
+         JOIN `Match_Players` mp ON m.ID = mp.matchID
+         JOIN `Player` p ON mp.playerID = p.ID
+         GROUP BY m.ID");
+      $ret = $stmt->fetchAll(PDO::FETCH_ASSOC);
       $matches = [];
-      foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+      foreach ($ret as $record) 
+      {
          $matches[] = new GameMatch(
-            $row['ID'],
-            $row['gameID'],
-            $row['gameName'],
-            $row['gameMode'],
-            $row['date'],
-            $row['duration'],
-            $row['notes']
+            $record['ID'],
+            $record['gameID'],
+            $record['gameName'],
+            $record['gameMode'],
+            $record['date'],
+            $record['duration'],
+            $record['notes'],
+            $record['players']
          );
       }
       return $matches;
    }
 
-   public function create($gameID, $gameMode, $date, $duration, $notes) {
+   public function getMatchPlayers() {
+      $stmt = $this->db->query("
+            SELECT p.nickname
+            FROM Player p
+            
+            ");
+   }
+
+   
+   public function create($gameID, $gameMode, $date, $duration, $notes, $players) {
       $stmt = $this->db->prepare("INSERT INTO GameMatch (gameID, gameMode, date, duration, notes) VALUES (?, ?, ?, ?, ?)");
-      return $stmt->execute([$gameID, $gameMode, $date, $duration, $notes]);
+      $ret = $stmt->execute([$gameID, $gameMode, $date, $duration, $notes]);
+      if ($ret) 
+      {
+         $matchID = $this->db->lastInsertId();
+         foreach ($players as $player)
+         {
+            $this->addPlayerToMatch($matchID, $player['playerID'], $player['points']);
+         }
+      }
+      return $ret;
    }
 
    public function delete($id) {

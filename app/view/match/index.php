@@ -20,11 +20,11 @@
         </thead>
         <tbody>
             <?php foreach ($matches as $match): ?>
-                <tr>
+                <tr class="text-center" >
                     <td class="p-2"><?php echo htmlspecialchars($match->getGameName()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($match->getGameMode()); ?></td>
                     <td class="p-2"><?php echo htmlspecialchars($match->getDate()); ?></td>
-                    <td class="p-2"><?php echo htmlspecialchars($match->getPlayers()); ?></td>
+                    <td class="p-2"><?php echo htmlspecialchars($match->getPlayers());?></td>
                     <td class="p-2">
                         <form method="POST" action="/match/delete" onsubmit="return confirm('Are you sure you want to delete this match?');">
                             <input type="hidden" name="_method" value="DELETE">

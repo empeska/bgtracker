@@ -51,7 +51,7 @@
 
     <div class="bg-white p-6 rounded shadow-md">
         <form method="POST" action="/match/create">
-            <-- game selection -->
+            <!-- game selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Game</label>
                 <select name="gameID" class="w-full p-2 border rounded" required>
@@ -60,7 +60,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <-- game mode selection -->
+            <!-- game mode selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Game Mode</label>
                 <select name="gameMode" class="w-full p-2 border rounded">
@@ -68,7 +68,7 @@
                     <option value="Coop">Coop</option>
                 </select>
             </div>
-            <-- date and time selection -->
+            <!-- date and time selection -->
             <div class="mb-4">
                 <label class="block text-gray-700">Date</label>
                 <input type="datetime-local" name="date" class="w-full p-2 border rounded" required>
@@ -77,12 +77,12 @@
                 <label class="block text-gray-700">Duration (HH:MM:SS)</label>
                 <input type="time" name="duration" class="w-full p-2 border rounded">
             </div>
-            <-- notes field -->
+            <!-- notes field -->
             <div class="mb-4">
                 <label class="block text-gray-700">Notes</label>
                 <textarea name="notes" class="w-full p-2 border rounded"></textarea>
             </div>
-            <-- players section -->
+            <!-- players section -->
             <div class="mb-4">
                 <label class="block text-gray-700">Players</label>
                 <div id="players-container">

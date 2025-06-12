@@ -3,29 +3,31 @@ class GameMatch {
    private $id;
    private $gameID;
    private $gameMode;
+   private $gameName;
    private $date;
    private $duration;
    private $notes;
+   private $players;
 
-   public function __construct($id = null, $gameID = null, $gameName = null, $gameMode = '', $date = null, $duration = null, $notes = '', $players = []) {
+   public function __construct($id = null, $gameID = null, $gameName = null, $gameMode = '', $date = null, $duration = null, $notes = '', $players = '') {
       $this->id = $id;
       $this->gameID = $gameID;
-      $this->gameMode = $gameName;
+      $this->gameName = $gameName;
       $this->gameMode = $gameMode;
       $this->date = $date;
       $this->duration = $duration;
       $this->notes = $notes;
-      $this->players = $players
+      $this->players = $players;
    }
 
    public function getId() { return $this->id; }
    public function getGameID() { return $this->gameID; }
-   public function getGameName() { return $this->gameMode; }
+   public function getGameName() { return $this->gameName; }
    public function getGameMode() { return $this->gameMode; }
    public function getDate() { return $this->date; }
    public function getDuration() { return $this->duration; }
    public function getNotes() { return $this->notes; }
-   // TODO : Add getters for players
+   public function getPlayers() { return $this->players; }
 
    public function setGameID($gameID) { $this->gameID = $gameID; }
    public function setGameMode($gameMode) { $this->gameMode = $gameMode; }
