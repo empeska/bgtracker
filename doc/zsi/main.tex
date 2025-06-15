@@ -1,0 +1,253 @@
+% !TeX spellcheck = pl_PL-Polish
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\selectlanguage{polish}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\usepackage{tocloft}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{svg}
+
+\geometry{margin=4cm}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns}
+
+\def\projectName{Zarządzanie projektem i koordynacja zespołu developerskiego przy tworzeniu aplikacji webowej z użyciem Gita, Trello i Dockera.}
+\def\authorA{Paweł Lewandowski}
+\def\authorB{Michał Kuta}
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\pagenumbering{gobble}
+\clearpage
+	\begin{figure}[h]
+		\centering
+		%\includegraphics[width=0.5\linewidth]{media/polsl_logo_pion_en_rgb.png}
+		\includegraphics[width=0.5\linewidth]{media/ps-logo.png}
+	\end{figure}
+
+\hspace{3cm}
+	\begin{center}Dokumentacja projektowa\end{center}
+	\hspace{3cm}
+	\begin{center}\large\textbf{Zarządzanie Systemami Informatycznymi}\end{center}
+	\begin{center}\large\textit{\projectName}\end{center}
+
+\hspace{7cm}
+	\begin{flushright}Kierunek: Informatyka
+		\end{flushright}
+		\begin{flushright}Członkowie zespołu:
+		\par
+		\textit{\authorA}
+		\par
+		\textit{\authorB}
+	\end{flushright}
+\vfill
+	\begin{center}Gliwice, 2024/2025\end{center}
+
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+\newpage
+
+\section{Wprowadzenie}
+
+\subsection{Role w projekcie}
+W naszym zespole odpowiedzialność została rozdzielona w następujący sposób:
+\begin{itemize}
+	\item \textbf{Michał Kuta} -- przygotowanie szkieletu projektu, implementacja wzorca MVC, testowanie.
+	\item \textbf{Paweł Lewandowski} -- organizacja pracy, zaprojektowanie bazy danych, stworzenie dokumentacji.
+\end{itemize}
+Podział obowiązków pozwolił na efektywną współpracę i realizację zadań zgodnie z harmonogramem.
+
+\subsection{Cel projektu}
+Celem projektu było stworzenie aplikacji umożliwiającej zapisywanie wyników rozgrywek gier planszowych. Projekt zakłada opracowanie funkcjonalnego narzędzia, które umożliwia:
+\begin{itemize}
+	\item Dodawanie graczy.
+	\item Dodawanie gier planszowych.
+	\item Zapisywanie rozgrywek wraz z wynikami.
+	\item Przeglądanie historii rozgrywek.
+	\item Przeglądanie rankingu graczy.
+\end{itemize}
+Wszystko w wygodnym dla użytkownika interfejsie.
+
+\pagebreak
+\section{Założenia projektowe}
+
+\subsection{Założenia techniczne i nietechniczne}
+\subsubsection{Założenia techniczne}
+\begin{itemize}
+	\item Aplikacja webowa oparta na wzorcu projektowym MVC.
+	\item Backend oraz logika aplikacji zaimplementowane w języku PHP.
+	\item Aplikacja uruchamiana w kontenerze Docker.
+	\item Warstwa prezentacji oparta na szablonach HTML/CSS.
+	\item Komunikacja z bazą danych za pomocą warstwy modelu.
+	\item Dane przechowywane w relacyjnej bazie danych MySQL.
+	\item Możliwość lokalnego uruchomienia poprzez docker-compose.
+\end{itemize}
+
+\subsubsection{Założenia nietechniczne}
+\begin{itemize}
+	\item Intuicyjny interfejs użytkownika dostosowany do komputerów i tabletów.
+	\item Możliwość rejestrowania wyników wielu graczy w różnych grach.
+	\item Funkcja przeglądania historii rozgrywek i statystyk.
+	\item Możliwość łatwej rozbudowy o nowe funkcjonalności.
+	\item Nacisk na prostotę obsługi i niezawodność.
+\end{itemize}
+
+\subsection{Stos technologiczny}
+\begin{itemize}
+	\item Frontend: HTML, CSS.
+	\item Backend: PHP z wykorzystaniem wzorca MVC.
+	\item Baza danych: MySQL.
+	\item System kontroli wersji: Git, GitHub.
+	\item Zarządzanie: Trello.
+	\item Konteneryzacja: Docker, Docker Compose.
+\end{itemize}
+
+\subsection{Oczekiwane rezultaty projektu}
+\begin{itemize}
+	\item W pełni funkcjonalna aplikacja webowa umożliwiająca rejestrowanie wyników gier planszowych.
+	\item Intuicyjny interfejs użytkownika umożliwiający łatwe dodawanie i przeglądanie rozgrywek.
+	\item System zapisu danych z wykorzystaniem bazy danych (MySQL).
+	\item Środowisko uruchomieniowe oparte na Dockerze.
+	\item Dokumentacja techniczna i użytkowa aplikacji.
+\end{itemize}
+
+\section{Realizacja projektu}
+Projekt został zrealizowany w następujących etapach:
+
+\begin{enumerate}
+	\item \textbf{Sprint 1 -- Planowanie:}
+	\begin{itemize}
+		\item Identyfikacja funkcjonalności aplikacji (dodawanie gier, graczy, przeglądanie rekordów).
+		\item Utworzenie tablicy Kanban w Trello do zarządzania zadaniami.
+		\item Wybór stosu technologicznego: PHP + MySQL + Docker, z wykorzystaniem wzorca MVC.
+		\item Zaplanowanie struktury katalogów i komponentów aplikacji.
+		\item Opracowanie planu sprintów oraz roadmapy rozwoju.
+	\end{itemize}
+	\item \textbf{Sprint 2 -- Tworzenie podstaw:}
+	\begin{itemize}
+		\item Utworzenie środowiska kontenerowego Docker (PHP + MySQL).
+		\item Implementacja szkieletu aplikacji zgodnie z wzorcem MVC.
+		\item Stworzenie warstwy modelu i połączenia z bazą danych.
+		\item Testowanie komunikacji z bazą MySQL za pomocą PDO.
+		\item Przygotowanie roboczych widoków do testowego wyświetlania danych.
+	\end{itemize}
+	\item \textbf{Sprint 3 -- Główne programowanie:}
+	\begin{itemize}
+		\item Implementacja logiki warstwy kontrolera.
+		\item Zastąpienie widoków roboczych finalnymi szablonami HTML i CSS.
+		\item Połączenie warstw modelu, widoku i kontrolera w spójną całość.
+		\item Wprowadzenie mechanizmów obsługi błędów.
+	\end{itemize}
+	\item \textbf{Sprint 4 -- Testowanie:}
+	\begin{itemize}
+		\item Intensywne testowanie aplikacji pod kątem poprawności działania.
+		\item Poprawa wykrytych błędów i usprawnienie mechanizmów walidacji.
+		\item Weryfikacja stabilności komunikacji między warstwami aplikacji.
+		\item Testy środowiska Docker (np. restart kontenerów, poprawność konfiguracji).
+		\item \textbf{Sprint 5 -- Faza końcowa:}
+		\begin{itemize}
+			\item Uzupełnienie i uporządkowanie dokumentacji technicznej projektu.
+			\item Weryfikacja wykonania zadań z tablicy Kanban.
+			\item Finalne poprawki w kodzie oraz przygotowanie aplikacji do prezentacji.
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+	
+\pagebreak
+\section{Wykresy postępu projektu}
+Poniżej przedstawiono dwa wykresy ilustrujące postęp prac nad projektem w kolejnych sprintach.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=\linewidth*0.9,
+			xlabel={Sprint},
+			ylabel={Pozostałe zadania},
+			grid=major, grid style={dashed, gray!70},
+			ymin=0, ymax=25,
+			xtick={0,1,2,3,4,5},
+			xticklabels={Start,Sprint 1,Sprint 2,Sprint 3,Sprint 4,Sprint 5},
+			bar width=0.20cm,
+			ybar,
+			enlargelimits=0.1,
+			]
+			\addplot[
+			nodes near coords,
+			fill=blue,
+			draw=none
+			] coordinates {
+				(0,22) (1,16) (2,11) (3,7) (4,3) (5,0)
+			};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Wykres liczby pozostałych zadań w kolejnych sprintach.}
+\end{figure}
+
+\pagebreak
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=\linewidth*0.9,
+			xlabel={Sprint},
+			ylabel={Pozostałe zadania},
+			grid=major, grid style={dashed, gray!70},
+			ymin=0, ymax=28,
+			xmax=5,
+			xtick={0,1,2,3,4,5},
+			xticklabels={Start,Sprint 1,Sprint 2,Sprint 3,Sprint 4,Sprint 5},
+			bar width=0.20cm,
+			ybar,
+			enlargelimits=0.1,
+			legend style={at={(0.95,0.95)}, anchor=north east},
+			]
+			\addplot[
+			nodes near coords,
+			fill=blue,
+			draw=none
+			] coordinates {
+				(0,22) (1,16) (2,11)
+			};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Wykres regresji liniowej i przewidywań na przyszłe sprinty.}
+\end{figure}
+
+\pagebreak
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{media/baza_danych}
+	\caption{o a tu baza danych to sie wrzuci tam gdzie trzeba.}
+	\label{fig:bazadanych}
+\end{figure}
+
+
+\section{Wnioski}
+\begin{itemize}
+	\item \textbf{Spostrzeżenia:} Praca nad aplikacją umożliwiła pogłębienie wiedzy z zakresu wzorca MVC, konteneryzacji za pomocą Dockera oraz pracy zespołowej z wykorzystaniem narzędzi takich jak Trello i GitHub. Projekt unaocznił także znaczenie jasnego podziału obowiązków oraz dobrej dokumentacji.
+	\item \textbf{Osiągnięcia:} Udało się zbudować w pełni działającą aplikację webową, umożliwiającą rejestrowanie wyników gier planszowych w przejrzysty i funkcjonalny sposób. Stworzono modułowy kod z zachowaniem zasad separacji warstw, a całość została uruchomiona w środowisku Docker, co ułatwia wdrażanie i testowanie.
+	\item \textbf{Potencjał rozwoju:} Projekt może być w przyszłości rozwijany o nowe funkcjonalności, takie jak: logowanie użytkowników, historia rozgrywek z filtrowaniem, generowanie statystyk i wykresów, eksport danych do plików (CSV/PDF), integracja z kontami Google lub Facebook, czy też wersja mobilna aplikacji.
+\end{itemize}
+
+\section{Bibliografia}
+\begin{enumerate}
+	\item Oficjalna dokumentacja PHP -- \url{https://www.php.net/docs.php}
+	\item Dokumentacja Docker -- \url{https://docs.docker.com/}
+	\item Dokumentacja MySQL -- \url{https://dev.mysql.com/doc/}
+	\item Artykuł: „Understanding MVC Architecture" \\ -- \url{https://www.geeksforgeeks.org/mvc-design-pattern/}
+	\item Oficjalna dokumentacja PDO -- \url{https://www.php.net/manual/en/book.pdo.php}
+	\item Dokumentacja Git -- \url{https://git-scm.com/doc}
+	\item Trello -- \url{https://trello.com}
+	\item dbdiagram.io -- \url{https://dbdiagram.io}
+\end{enumerate}
+	
+\end{document}
