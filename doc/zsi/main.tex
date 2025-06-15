@@ -14,7 +14,7 @@
 \usepackage{hyperref}
 \usepackage{svg}
 
-\geometry{margin=4cm}
+\geometry{margin=3.6cm}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{patterns}
 
@@ -118,10 +118,11 @@ Wszystko w wygodnym dla użytkownika interfejsie.
 	\item Środowisko uruchomieniowe oparte na Dockerze.
 	\item Dokumentacja techniczna i użytkowa aplikacji.
 \end{itemize}
-
+\newpage
 \section{Realizacja projektu}
+Nasz projekt wstępnie podzieliliśmy na 5 sprintów i zapisaliśmy je na naszej tablicy Trello.
+\subsection{Opis sprintów}
 Projekt został zrealizowany w następujących etapach:
-
 \begin{enumerate}
 	\item \textbf{Sprint 1 -- Planowanie:}
 	\begin{itemize}
@@ -131,6 +132,19 @@ Projekt został zrealizowany w następujących etapach:
 		\item Zaplanowanie struktury katalogów i komponentów aplikacji.
 		\item Opracowanie planu sprintów oraz roadmapy rozwoju.
 	\end{itemize}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{media/architektura}
+		\caption{Architektura MVC w naszym projekcie. Użytkownik ma jedynie kontakt z warstwą View która jest kontrolowana przez warstwę Controller. Controller natomiast korzysta z warstwy Model która jest warstwą danych, Controller je przetwarza i wyświetla w warstwie View.}
+		\label{fig:architektura}
+	\end{figure}
+	\newpage
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1\linewidth]{media/baza_danych}
+		\caption{Wspólnie zaprojektowana baza danych.}
+		\label{fig:bazadanych}
+	\end{figure}
 	\item \textbf{Sprint 2 -- Tworzenie podstaw:}
 	\begin{itemize}
 		\item Utworzenie środowiska kontenerowego Docker (PHP + MySQL).
@@ -146,53 +160,26 @@ Projekt został zrealizowany w następujących etapach:
 		\item Połączenie warstw modelu, widoku i kontrolera w spójną całość.
 		\item Wprowadzenie mechanizmów obsługi błędów.
 	\end{itemize}
+	\newpage
 	\item \textbf{Sprint 4 -- Testowanie:}
 	\begin{itemize}
 		\item Intensywne testowanie aplikacji pod kątem poprawności działania.
 		\item Poprawa wykrytych błędów i usprawnienie mechanizmów walidacji.
 		\item Weryfikacja stabilności komunikacji między warstwami aplikacji.
 		\item Testy środowiska Docker (np. restart kontenerów, poprawność konfiguracji).
-		\item \textbf{Sprint 5 -- Faza końcowa:}
-		\begin{itemize}
-			\item Uzupełnienie i uporządkowanie dokumentacji technicznej projektu.
-			\item Weryfikacja wykonania zadań z tablicy Kanban.
-			\item Finalne poprawki w kodzie oraz przygotowanie aplikacji do prezentacji.
-		\end{itemize}
+	\end{itemize}
+	\item \textbf{Sprint 5 -- Faza końcowa:}
+	\begin{itemize}
+		\item Uzupełnienie i uporządkowanie dokumentacji technicznej projektu.
+		\item Weryfikacja wykonania zadań z tablicy Kanban.
+		\item Finalne poprawki w kodzie oraz przygotowanie aplikacji do prezentacji.
 	\end{itemize}
 \end{enumerate}
 	
 \pagebreak
-\section{Wykresy postępu projektu}
+\subsection{Wykresy postępu projektu}
 Poniżej przedstawiono dwa wykresy ilustrujące postęp prac nad projektem w kolejnych sprintach.
 
-\begin{figure}[h]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-			width=\linewidth*0.9,
-			xlabel={Sprint},
-			ylabel={Pozostałe zadania},
-			grid=major, grid style={dashed, gray!70},
-			ymin=0, ymax=25,
-			xtick={0,1,2,3,4,5},
-			xticklabels={Start,Sprint 1,Sprint 2,Sprint 3,Sprint 4,Sprint 5},
-			bar width=0.20cm,
-			ybar,
-			enlargelimits=0.1,
-			]
-			\addplot[
-			nodes near coords,
-			fill=blue,
-			draw=none
-			] coordinates {
-				(0,22) (1,16) (2,11) (3,7) (4,3) (5,0)
-			};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Wykres liczby pozostałych zadań w kolejnych sprintach.}
-\end{figure}
-
-\pagebreak
 \begin{figure}[h]
 	\centering
 	\begin{tikzpicture}
@@ -228,26 +215,40 @@ Poniżej przedstawiono dwa wykresy ilustrujące postęp prac nad projektem w kol
 			] {-5.500*x + 21.83};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Wykres regresji liniowej i przewidywań na przyszłe sprinty.}
+	\caption{Wykres regresji liniowej wykonanych zadań oraz prognoza zakończenia projektu. Linia trendu sugeruje, że projekt powinien zostać ukończony około sprintu 4.}
 \end{figure}
-Według tego wykresu powinniśmy zakończyć projekt przy sprincie 4.
-
-\pagebreak
-\begin{figure}
+\newpage
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{media/baza_danych}
-	\caption{o a tu baza danych to sie wrzuci tam gdzie trzeba.}
-	\label{fig:bazadanych}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=\linewidth*0.9,
+			xlabel={Sprint},
+			ylabel={Pozostałe zadania},
+			grid=major, grid style={dashed, gray!70},
+			ymin=0, ymax=25,
+			xtick={0,1,2,3,4,5},
+			xticklabels={Start,Sprint 1,Sprint 2,Sprint 3,Sprint 4,Sprint 5},
+			bar width=0.20cm,
+			ybar,
+			enlargelimits=0.1,
+			]
+			\addplot[
+			nodes near coords,
+			fill=blue,
+			draw=none
+			] coordinates {
+				(0,22) (1,16) (2,11) (3,7) (4,3) (5,0)
+			};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Rzeczywisty przebieg liczby pozostałych zadań w kolejnych sprintach. Widać systematyczny postęp i redukcję liczby zadań aż do zera.}
 \end{figure}
 
+\section{Konkluzja}
+Projekt został zrealizowany zgodnie z założeniami, dostarczając funkcjonalną aplikację webową do rejestrowania wyników gier planszowych. Wykorzystanie wzorca MVC, PHP, MySQL oraz konteneryzacji Docker zapewniło stabilność i skalowalność rozwiązania. Podział obowiązków w zespole oraz efektywne zarządzanie zadaniami za pomocą Trello pozwoliły na terminowe ukończenie wszystkich sprintów. Aplikacja spełnia wszystkie wymagania funkcjonalne i nietechniczne, oferując intuicyjny interfejs oraz możliwość łatwej rozbudowy w przyszłości.
 
-\section{Wnioski}
-\begin{itemize}
-	\item \textbf{Spostrzeżenia:} Praca nad aplikacją umożliwiła pogłębienie wiedzy z zakresu wzorca MVC, konteneryzacji za pomocą Dockera oraz pracy zespołowej z wykorzystaniem narzędzi takich jak Trello i GitHub. Projekt unaocznił także znaczenie jasnego podziału obowiązków oraz dobrej dokumentacji.
-	\item \textbf{Osiągnięcia:} Udało się zbudować w pełni działającą aplikację webową, umożliwiającą rejestrowanie wyników gier planszowych w przejrzysty i funkcjonalny sposób. Stworzono modułowy kod z zachowaniem zasad separacji warstw, a całość została uruchomiona w środowisku Docker, co ułatwia wdrażanie i testowanie.
-	\item \textbf{Potencjał rozwoju:} Projekt może być w przyszłości rozwijany o nowe funkcjonalności, takie jak: logowanie użytkowników, historia rozgrywek z filtrowaniem, generowanie statystyk i wykresów, eksport danych do plików (CSV/PDF), integracja z kontami Google lub Facebook, czy też wersja mobilna aplikacji.
-\end{itemize}
-
+\newpage
 \section{Bibliografia}
 \begin{enumerate}
 	\item Oficjalna dokumentacja PHP -- \url{https://www.php.net/docs.php}
