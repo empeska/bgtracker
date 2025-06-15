@@ -206,21 +206,31 @@ Poniżej przedstawiono dwa wykresy ilustrujące postęp prac nad projektem w kol
 			xtick={0,1,2,3,4,5},
 			xticklabels={Start,Sprint 1,Sprint 2,Sprint 3,Sprint 4,Sprint 5},
 			bar width=0.20cm,
-			ybar,
 			enlargelimits=0.1,
 			legend style={at={(0.95,0.95)}, anchor=north east},
 			]
 			\addplot[
+			ybar,
 			nodes near coords,
 			fill=blue,
 			draw=none
 			] coordinates {
 				(0,22) (1,16) (2,11)
 			};
+			\addplot [domain=0:3, red, dashed] {-5.500*x + 21.83};
+			\addplot [
+			domain=3:5,
+			red,
+			dashed,
+			mark=*,
+			mark options={fill=red},
+			samples at={3,4,5}
+			] {-5.500*x + 21.83};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Wykres regresji liniowej i przewidywań na przyszłe sprinty.}
 \end{figure}
+Według tego wykresu powinniśmy zakończyć projekt przy sprincie 4.
 
 \pagebreak
 \begin{figure}
