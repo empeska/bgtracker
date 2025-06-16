@@ -256,7 +256,6 @@ Poniżej przedstawiono dwa wykresy ilustrujące postęp prac nad projektem w kol
 	\end{tikzpicture}
 	\caption{Wykres liczby pozostałych zadań w kolejnych sprintach.}
 \end{figure}
-
 \pagebreak
 \begin{figure}[h]
 	\centering
@@ -296,8 +295,46 @@ Poniżej przedstawiono dwa wykresy ilustrujące postęp prac nad projektem w kol
 	\caption{Wykres regresji liniowej i przewidywań na przyszłe sprinty.}
 \end{figure}
 Według tego wykresu powinniśmy zakończyć projekt przy sprincie 4.
+\section{Trello – zarządzanie zadaniami}
+
+Do zarządzania zadaniami projektowymi wykorzystano narzędzie \textbf{Trello}, zgodnie z podejściem Kanban i metodologią Scrum. Na początku projektu utworzono kolumnę \textbf{Backlog}, zawierającą wszystkie zaplanowane zadania, zarówno techniczne, jak i organizacyjne. Następnie zadania z backlogu zostały podzielone na sprinty.
+
+W ramach każdego sprintu zadania były przenoszone kolejno przez kolumny: \textbf{To do}, \textbf{Doing} oraz \textbf{Done}, co umożliwiało pełną wizualizację postępu prac oraz bieżące monitorowanie realizacji zadań.
+
+Po zakończeniu danego sprintu, wszystkie zadania z kolumny \textbf{Done} danego sprintu wracały do kolumny sprintu, a cała kolumna była przenoszona na prawą część tablicy. Taki zabieg pozwalał zachować czytelność tablicy oraz śledzić historię postępów w czasie całego cyklu życia projektu.
+
+Poniżej przedstawiono przykładowe zrzuty ekranu z tablicy Trello wykorzystywanej w naszym projekcie:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{media/trello1.png}
+    \caption{kolumny: \textbf{Backlog}, \textbf{To do}, \textbf{Doing} oraz \textbf{Done}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{media/trello2.png}
+    \caption{kolumny sprintów}
+\end{figure}
 
 \pagebreak
+\section{Architektura MVC}
+
+Projekt został zaprojektowany zgodnie z wzorcem architektonicznym \textbf{Model-View-Controller (MVC)}, który pozwala na przejrzyste oddzielenie logiki biznesowej od warstwy prezentacji oraz obsługi żądań.
+
+\begin{itemize}
+    \item \textbf{Model} -- znajduje się w folderze \texttt{model} i zawiera klasy reprezentujące dane (\texttt{Game.php}, \texttt{Player.php}, \texttt{GameMatch.php}) oraz klasy obsługujące statystyki (\texttt{GameRepo.php}, \texttt{PlayerRepo.php}, \texttt{GameMatchRepo.php}) odpowiedzialne za interakcję z bazą danych.
+    \item \textbf{Controller} -- folder \texttt{controller} zawiera klasy odpowiedzialne za przetwarzanie logiki aplikacji i komunikację między modelem a widokiem: \texttt{GameController.php}, \texttt{MatchController.php} \texttt{PlayerController.php}.
+    \item \textbf{View} -- folder \texttt{view} przechowuje pliki \texttt{.php}, które odpowiadają za generowanie interfejsu użytkownika. Widoki są pogrupowane tematycznie w podfolderach: \texttt{game}, \texttt{match}, \texttt{player} oraz \texttt{home}.
+\end{itemize}
+
+Poniższy zrzut ekranu przedstawia strukturę katalogów w projekcie, odzwierciedlającą implementację wzorca MVC:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{media/mvc.png}
+    \caption{Struktura katalogów aplikacji oparta na wzorcu MVC}
+\end{figure}
 \section{Schemat bazy danych}
 
 W celu odwzorowania relacji pomiędzy encjami w naszym systemie, przygotowano diagram bazy danych w notacji UML. Baza danych została zaprojektowana w sposób umożliwiający przechowywanie informacji o grach, graczach oraz rozegranych meczach. Diagram uwzględnia kluczowe encje: \textbf{Game}, \textbf{Player}, \textbf{GameMatch} oraz tabelę pośredniczącą \textbf{MatchPlayers}, która realizuje relację wiele-do-wielu pomiędzy meczami a graczami. Diagram ten stanowi podstawę dalszego projektowania warstwy logicznej aplikacji oraz implementacji komunikacji z bazą danych.
@@ -305,10 +342,52 @@ W celu odwzorowania relacji pomiędzy encjami w naszym systemie, przygotowano di
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{media/baza_danych}
-	\caption{o a tu baza danych to sie wrzuci tam gdzie trzeba.}
+	\caption{Diagram bazy danych}
 	\label{fig:bazadanych}
 \end{figure}
 
+\section{Ukończona aplikacja}
+
+\subsection{Gracze}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{media/1.png}
+	\caption{Tabela graczy}
+	\label{fig:tabelagraczy}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{media/4.png}
+	\caption{Statystyki gracza}
+	\label{fig:statystykigracza}
+\end{figure}
+
+\subsection{Gry}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{media/2.png}
+	\caption{Tabela gier}
+	\label{fig:tabelagier}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{media/5.png}
+	\caption{Statystyki gry}
+	\label{fig:statystykigry}
+\end{figure}
+
+\subsection{Mecze}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{media/3.png}
+	\caption{Tabela meczy}
+	\label{fig:tabelameczy}
+\end{figure}
 
 \section{Wnioski}
 \begin{itemize}
